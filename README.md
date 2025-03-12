@@ -1,6 +1,6 @@
 # Anonymous Teacher Feedback System
 
-A scalable Node.js backend application for managing student feedback for teachers. Built with Express.js, TypeScript, and MongoDB.
+A scalable Node.js backend application for managing student feedback for teachers. Built with Express.js, TypeScript, and MongoDB along with EJS.
 
 ## Features
 
