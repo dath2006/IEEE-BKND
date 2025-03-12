@@ -14,7 +14,7 @@
       <% teacher.forEach(teacher => { %>
       <li><%= teacher.name %></li>
       <% if (!teacher.students.includes(student?._id)) { %>
-      <a href="/student/feedback/<%= teacher._id %>"> Give Feedback</a>
+      <a href="/student/feedback?id=<%= teacher._id %>"> Give Feedback</a>
       <% } else { %>
       <p>You have already given feedback to this teacher</p>
       <% } %> <% }) %>

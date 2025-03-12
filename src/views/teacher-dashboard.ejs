@@ -30,7 +30,7 @@
     const remainingStudents = document.querySelector(".remaining-students");
     const submittedStudents = document.querySelector(".submitted-students");
     const res = async () => {
-      const response = await fetch("/teacher/analytics");
+      const response = await fetch("http://localhost:3000/teacher/analytics");
       const data = await response.json();
       analytics.innerHTML = `
       <p>Total Students: ${data.noOfStudents}</p>

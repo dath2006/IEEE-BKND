@@ -95,8 +95,7 @@ const teacherController = {
         name: teacher?.name,
         students: teacher?.students,
       },
-      feedback,
-      AverageRating,
+      AverageRating: AverageRating.toFixed(2),
       NoOfPositiveFeedback,
       NoOfNegativeFeedback,
       NoOfNeutralFeedback,
@@ -117,12 +116,14 @@ const teacherController = {
       .filter((stu) => teacher?.students.includes(stu?._id as any))
       .map((stu) => stu.name);
     // Calculate the feedback
-    const { noOfStudents, noOfFeedback, remainingStudents, percentage } =
-      calculateFeedback(student, feedback);
+    const { noOfStudents, noOfFeedback, percentage } = calculateFeedback(
+      student,
+      feedback
+    );
     // Render the feedback page
     res.json({
       LeftOutStudents,
-      remainingStudents,
+      submittedStudents,
       percentage,
       noOfFeedback,
       noOfStudents,
@@ -132,13 +133,6 @@ const teacherController = {
         name: teacher?.name,
         students: teacher?.students,
       },
-      feedback,
-      student: student.map((stu) => ({
-        _id: stu._id,
-        name: stu.name,
-        email: stu.email,
-      })),
-      submittedStudents,
     });
   },
 
@@ -155,11 +149,8 @@ const teacherController = {
 function calculateFeedback(student: any[], feedback: any[]) {
   const noOfStudents = student.length;
   const noOfFeedback = feedback.length;
-  const remainingStudents = student.filter(
-    (stu) => !feedback.includes(stu._id)
-  );
   const percentage = (noOfFeedback / noOfStudents) * 100;
-  return { noOfStudents, noOfFeedback, remainingStudents, percentage };
+  return { noOfStudents, noOfFeedback, percentage };
 }
 
 // Export the teacher controller

@@ -56,7 +56,7 @@ A scalable Node.js backend application for managing student feedback for teacher
 1. Clone the repository:
 
    ```bash
-   git clone <https://github.com/dath2006/IEEE-BKND.git>
+   git clone https://github.com/dath2006/IEEE-BKND.git
    cd ieee-bknd
    ```
 
@@ -71,7 +71,7 @@ A scalable Node.js backend application for managing student feedback for teacher
    ```env
    NODE_ENV=development
    PORT=3000
-   MONGODB_URI=your_mongodb_uri
+   MONGODB_URI=your_mongodb_uri // let it be default
    JWT_SECRET=your_jwt_secret
    ```
 
@@ -138,8 +138,8 @@ Test the API endpoints directly in Postman by clicking the button above. The col
 ### Student Routes
 
 - GET `/student/dashboard` - Student dashboard
-- GET `/student/feedback?id=` - Get feedback form for a teacher
-- POST `/student/feedback?id=` - Submit feedback for a teacher
+- GET `/student/feedback?id=` - Get feedback form for a teacher (Get id from MongoDB Compass)
+- POST `/student/feedback?id=` - Submit feedback for a teacher (Get id from MongoDB Compass)
   ```json
   {
     "feedback": "positive",
@@ -149,7 +149,7 @@ Test the API endpoints directly in Postman by clicking the button above. The col
 
 ### Teacher Routes
 
-- GET `/teacher/dashboard` - Teacher dashboard
+- GET `/teacher/dashboard` - Teacher dashboard - It also gives some embedded HTML feedback analysis
 - GET `/teacher/analytics` - View feedback analytics
 
 ## Scalability

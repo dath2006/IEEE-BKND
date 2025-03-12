@@ -8,7 +8,7 @@ import hpp from "hpp";
 // Create different rate limiters for different routes
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 10, // limit each IP to 5 login/register attempts per windowMs
+  max: 20, // limit each IP to 20 login/register attempts per windowMs
   message: "Too many attempts from this IP, please try again after 15 minutes",
 });
 
