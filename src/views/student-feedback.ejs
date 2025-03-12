@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Feedback for <%= teacher.name %></h1>
+    <form action="/student/feedback?id=<%= teacher._id %>" method="post">
+      <select name="feedback">
+        <option value="positive">Positive</option>
+        <option value="negative">Negative</option>
+        <option value="neutral">Neutral</option>
+      </select>
+      <select name="rating">
+        <option value="1">1 (Poor)</option>
+        <option value="2">2 (Average)</option>
+        <option value="3">3 (Good)</option>
+        <option value="4">4 (Very Good)</option>
+        <option value="5">5 (Excellent)</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

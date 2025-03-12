@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Teacher Dashboard</h1>
+    <p>Name: <%= teacher.name %></p>
+    <a href="/teacher/logout">Logout</a>
+    <h2>Feedbacks</h2>
+    <p>Positive Feedback: <%= NoOfPositiveFeedback %></p>
+    <p>Negative Feedback: <%= NoOfNegativeFeedback %></p>
+    <p>Neutral Feedback: <%= NoOfNeutralFeedback %></p>
+    <p>Average Rating: <%= AverageRating %></p>
+
+    <h2>Analytics</h2>
+
+    <p class="analytics"></p>
+
+    <h2>Remaining Students</h2>
+    <ul class="remaining-students"></ul>
+    <br />
+    <h2>Submitted Students</h2>
+    <ul class="submitted-students"></ul>
+  </body>
+  <script>
+    const analytics = document.querySelector(".analytics");
+    const remainingStudents = document.querySelector(".remaining-students");
+    const submittedStudents = document.querySelector(".submitted-students");
+    const res = async () => {
+      const response = await fetch("/teacher/analytics");
+      const data = await response.json();
+      analytics.innerHTML = `
+      <p>Total Students: ${data.noOfStudents}</p>
+      <p>Total Feedback: ${data.noOfFeedback}</p>
+      <p>Remaining Students: ${data.remainingStudents}</p>
+      <p>Percentage of Feedback: ${data.percentage}%</p>
+      `;
+      data.LeftOutStudents.forEach((ele) => {
+        if (ele) {
+          remainingStudents.innerHTML += `<li>${ele}</li>`;
+        }
+      });
+      data.submittedStudents.forEach((ele) => {
+        if (ele) {
+          submittedStudents.innerHTML += `<li>${ele}</li>`;
+        }
+      });
+    };
+    res();
+  </script>
+</html>

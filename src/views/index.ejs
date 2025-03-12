@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Student Login</h1>
+      <div>
+        <form action="/student/login" method="post">
+          <input type="email" placeholder="Email" name="email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <button>Login</button>
+        </form>
+      </div>
+      <br />
+      <a href="/student/register">Don't have an account? Register</a>
+    </div>
+    <div>
+      <h1>Teacher Login</h1>
+      <div>
+        <form action="/teacher/login" method="post">
+          <input type="email" placeholder="Email" name="email" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <button>Login</button>
+        </form>
+      </div>
+      <br />
+      <a href="/teacher/register">Don't have an account? Register</a>
+    </div>
+  </body>
+</html>

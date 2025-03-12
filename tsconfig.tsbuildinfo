@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/middleware.ts","./src/schema.ts","./src/controllers/studentcontroller.ts","./src/controllers/teachercontroller.ts","./src/models/feedback.ts","./src/models/student.ts","./src/models/teacher.ts","./src/routes/studentroute.ts","./src/routes/teacherroute.ts","./src/utils/asyncerrorhandler.ts","./src/utils/expresserror.ts"],"version":"5.7.3"}
