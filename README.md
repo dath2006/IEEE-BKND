@@ -43,7 +43,6 @@ A scalable Node.js backend application for managing student feedback for teacher
 - MongoDB with Mongoose
 - Winston for logging
 - Zod for validation
-- Jest for testing
 
 ## Prerequisites
 
