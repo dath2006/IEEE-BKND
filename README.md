@@ -56,7 +56,7 @@ A scalable Node.js backend application for managing student feedback for teacher
 1. Clone the repository:
 
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/dath2006/IEEE-BKND.git>
    cd ieee-bknd
    ```
 
@@ -90,7 +90,7 @@ npm run start
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://dath-api.postman.co/workspace/DATH-API-Workspace~da0b35bf-04a4-4619-b2b6-2d5f6012c144/collection/40574721-05eadb95-77d0-4cc4-9b07-5a9b16d6c713?action=share&creator=40574721)
 
-Test the API endpoints directly in Postman by clicking the button above. The collection includes all endpoints with example requests and responses.
+Test the API endpoints directly in Postman by clicking the button above. The collection includes all endpoints with clean documentation for requests and responses.
 
 ### Authentication
 
